@@ -59,6 +59,8 @@ def get_video_thumb(file, output=None, size=200):
         '-vframes:v', '1',
         '-q:v', '1',
         '-qmin', '1',
+        '-qmax', '1',
+        '-r', '1',
         output,
     ])
     p.communicate()
