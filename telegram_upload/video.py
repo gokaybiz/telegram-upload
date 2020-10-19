@@ -57,6 +57,9 @@ def get_video_thumb(file, output=None, size=200):
         '-filter:v',
         'scale={}:{}'.format(width, height),
         '-vframes:v', '1',
+        '-vsync', 'vfr',
+        ' -vf', '"select=gt(scene\,0.4)"',
+        'fps=fps=1/600',
         output,
     ])
     p.communicate()
